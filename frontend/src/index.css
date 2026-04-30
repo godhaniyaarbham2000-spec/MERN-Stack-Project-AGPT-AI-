@@ -1,0 +1,233 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#f0f2f5;
+}
+
+/* HOME */
+
+.home{
+text-align:center;
+margin-top:150px;
+}
+
+.logo{
+font-size:60px;
+font-weight:bold;
+background:linear-gradient(90deg,#ff4b2b,#ff416c);
+background-clip:text;
+color:transparent;
+}
+
+.subtitle{
+margin-top:10px;
+}
+
+/* BUTTONS */
+
+.buttons{
+margin-top:40px;
+display:flex;
+justify-content:center;
+gap:25px;
+}
+
+button{
+padding:15px 40px;
+font-size:18px;
+border:none;
+border-radius:40px;
+background:#007bff;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+/* FORM */
+
+.container{
+width:350px;
+margin:auto;
+margin-top:120px;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+/* AI CHAT */
+
+.ai-container{
+width:70%;
+margin:auto;
+margin-top:100px;
+text-align:center;
+}
+
+.ai-title{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.answer{
+margin-top:20px;
+padding:15px;
+background:#f1f1f1;
+border-radius:6px;
+}
+
+.ai-container input{
+
+width:70%;
+padding:14px 18px;
+
+font-size:18px;        /* text size bigger */
+font-family:"Poppins", sans-serif;  /* modern font */
+font-weight:500;       /* thoda bold */
+
+border-radius:30px;
+border:1px solid #ccc;
+
+outline:none;
+
+margin-right:10px;
+
+}
+
+
+.ai-container{
+
+width:70%;
+margin:auto;
+margin-top:50px;
+text-align:center;
+
+}
+
+.ai-title{
+
+font-size:32px;
+font-family:"Poppins",sans-serif;
+margin-bottom:30px;
+
+}
+
+.ai-input-box{
+
+display:flex;
+justify-content:center;
+
+}
+
+.ai-input-box input{
+
+width:70%;
+padding:14px 18px;
+
+font-size:18px;
+font-family:"Poppins",sans-serif;
+font-weight:500;
+
+border-radius:30px;
+border:1px solid #ccc;
+
+outline:none;
+
+margin-right:10px;
+
+}
+
+.ai-input-box button{
+
+padding:14px 25px;
+margin-bottom: 20px;
+font-size:16px;
+font-weight:600;
+
+border:none;
+border-radius:30px;
+
+background:#10a37f;
+color:white;
+
+cursor:pointer;
+
+}
+
+.answer-box{
+
+margin-top:30px;
+
+padding:25px;
+
+font-size:17px;
+font-family:"Poppins",sans-serif;
+
+text-align:left;
+
+line-height:1.7;
+
+background:#f5f5f5;
+
+border-radius:10px;
+
+white-space:pre-wrap;
+
+}
+
+.send-btn{
+
+width:150px;
+height:50px;
+margin-top: 15px;
+
+font-size:14px;
+
+border-radius: 20px;
+
+background:#10a37f;
+color:white;
+
+border:none;
+
+cursor:pointer;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+}
+
+/* 📱 ONLY MOBILE FIX */
+@media (max-width:768px){
+  .ai-input-box{
+    flex-direction:column;
+    align-items: center;
+  }
+
+  .ai-input-box input{
+    width:100%;
+  }
+
+  .ai-input-box button{
+    width:50%;
+    margin-top:10px;
+  }
+}
+
