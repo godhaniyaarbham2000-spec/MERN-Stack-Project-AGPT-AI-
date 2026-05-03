@@ -9,6 +9,31 @@ const registerUser = async (req, res) => {
 
   try {
 
+    // ✅ VALIDATION START
+    if (!name || !email || !password) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
+
+    if (name.trim().length < 2) {
+      return res.status(400).json({ message: "Name must be at least 2 characters" });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ message: "Invalid email format" });
+    }
+
+    if (password.length < 6) {
+      return res.status(400).json({ message: "Password must be at least 6 characters" });
+    }
+
+    // check existing user
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: "User already exists" });
+    }
+    // ✅ VALIDATION END
+
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
@@ -18,12 +43,13 @@ const registerUser = async (req, res) => {
       password: hashedPassword
     });
 
-    res.json(user);
+    res.json({
+      message: "User registered successfully",
+      user
+    });
 
   } catch (error) {
-
     res.status(500).json({ message: error.message });
-
   }
 };
 
@@ -34,6 +60,10 @@ const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
   try {
+
+    if (!email || !password) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
 
     const user = await User.findOne({ email });
 
@@ -49,7 +79,7 @@ const loginUser = async (req, res) => {
 
     const token = jwt.sign(
       { id: user._id },
-       process.env.JWT_SECRET ,
+      process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );
 
@@ -59,9 +89,7 @@ const loginUser = async (req, res) => {
     });
 
   } catch (error) {
-
     res.status(500).json({ message: error.message });
-
   }
 };
 
