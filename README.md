@@ -1,8 +1,9 @@
 # 🤖 AGPT-AI (AI Learning Assistant - MERN Stack Project)
 
 A full-stack AI Learning Assistant web application built using **MERN Stack (MongoDB, Express.js, React.js, Node.js)** with AI integration, authentication, quiz system, and protected routes.
-it
+
 It allows users to register and log in securely, and interact with an AI assistant through a chat interface to get instant responses to their queries.
+
 ---
 
 ## 🚀 Features
