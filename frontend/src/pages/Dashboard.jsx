@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import API from "../services/api";
 
 function Dashboard() {
 
@@ -17,10 +17,7 @@ function Dashboard() {
 
       setAnswer("Thinking...");
 
-      const res = await axios.post(
-        "http://localhost:5000/api/ai/ask",
-        { question }
-      );
+      const res = await API.post("/ai/ask", { question });
 
       setAnswer(res.data.answer);
 
@@ -56,7 +53,7 @@ function Dashboard() {
           }}
         />
 
-        <button  className="send-btn" onClick={askAI}>
+        <button className="send-btn" onClick={askAI}>
           Ask AI
         </button>
 
@@ -72,4 +69,4 @@ function Dashboard() {
 
 }
 
-export default Dashboard; 
+export default Dashboard;
