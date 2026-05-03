@@ -6,30 +6,22 @@ import Login from "./pages/Login.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Quiz from "./pages/Quiz.jsx";
 
-function App(){
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-return(
+        <Route path="/register" element={<Register />} />
 
-<BrowserRouter>
+        <Route path="/login" element={<Login />} />
 
-<Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
 
-<Route path="/" element={<Home/>} />
-
-<Route path="/register" element={<Register/>} />
-
-<Route path="/login" element={<Login/>} />
-
-<Route path="/dashboard" element={<Dashboard/>} />
-
-<Route path="/quiz" element={<Quiz/>} />
-
-</Routes>
-
-</BrowserRouter>
-
-);
-
+        <Route path="/quiz" element={<Quiz />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
