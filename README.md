@@ -2,7 +2,7 @@
 
 A full-stack AI Learning Assistant web application built using **MERN Stack (MongoDB, Express.js, React.js, Node.js)** with AI integration, authentication, quiz system, and protected routes.
 
-It allows users to register/login, chat with AI, and save prompts securely.
+It allows users to register/login, chat with AI.
 
 ---
 
